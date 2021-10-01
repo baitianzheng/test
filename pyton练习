@@ -1,0 +1,192 @@
+"""
+1、下面那些不能作为变量？
+1、find     2、_num    3、7val        4、add.       5、def     
+6、pan      7、-print   8、open_file   9、FileName   10、9prints  
+11、INPUT   12、ls      13、user^name  14、list1     15、str_
+16、_888    17、is      18、true       19、none      20、try  
+
+    答案：7val   add.  def  -print  9prints user^name  is   try  
+    
+
+2、请描述一下变量的命名规范，（简单题）
+    1、只能由数字、字母、下划线组成，并且不能用数字开头
+    2、不能使用python中的关键字
+
+3、python如何如何注释代码
+    单行注释：使用 # 号 (pycharm的快捷键:ctrl+/)
+    文档注释(文档字符串)：使用三引号
+
+"""
+
+_num = 99
+
+# True = 99
+
+# true =999
+
+#  python中是严格区分大小写的
+t = 11
+T = 99
+
+
+dic = {""}
+
+'''
+字符串常用法
+'''
+s1 = "123werWeeeerr123ceojwoow123"
+
+print(s1.find("e"))  #查找
+print(s1.count("j")) #查询个数
+
+print (s1.replace("123","666",2)) #替换
+s4 = "python"
+
+res4 = s4.upper()  #字符串转换大写
+print(res4)
+s5 ="JAVA"
+res5 = s5.lower()
+print(res5)
+
+#split 字符串分割为 列表
+
+s6 = "python111java111cc"
+
+print(s6.split("111"))  #  字符串转换为列表['python', 'java', 'cc']
+
+#join  拼接
+s7 = "222".join(("python","java","php"))
+print(s7)
+s8 = "111".join(["python","java","php"])
+
+print(s8) #列表转换为字符串python111java111php
+
+
+'''
+元组:用小括号表示
+tuple 类型
+("python","java","php")
+元组与列表保存数据类型是任意的
+列表：用中括号 表示
+list 类型
+["python","java","php"]
+'''
+
+li = ["python",666,"true",[11,22,333]]
+tu = ("python",666,"true",[11,22,333])
+
+print(type(li))
+print(type(tu))
+
+s = "python"
+
+li = ["aaa","bbb","ccc"]
+
+tu = (123,"222","999")
+
+#通过下标取值 ，01从前往后取值
+print(s[2]) #输出t
+print(li[2])
+print(tu[1])
+
+#通过下标取值 ，02从后往前取值
+
+print(s[-4]) #输出t
+print(li[-1])
+print(tu[-2])
+
+#可以进行切片操作
+#前边起始位置，后边终止位置: 左闭右开
+
+li = [11,22,33,44,55,66,77]
+
+res = li[0:5]
+
+print(res) #输出 [11, 22, 33, 44, 55]
+
+res2 = li[2:5]
+
+print(res2) #输出[33, 44, 55]
+
+'''
+1、现在有变量 a = ‘hello’ , b = ‘python18’ c = ‘!’ ,
+通过相关操作转换成字符串：'hello python18 !'（注意点:转换之后单词之间有空格）  
+'''
+a = 'hello'
+b = 'python18'
+c = '!'
+
+str1 = "".join((a,b,c))
+
+print(str1) #输出hellopython18!
+
+
+
+'''
+2、使用random模块和字符串拼接的方法，随机生成一个130开头的手机号码（只能使用上课学过的知识去做）。
+'''
+import random
+# #生成一个9位数
+n = random.randint(100000000,999999999)
+
+#转换为字符串，然后切片获取八位
+n1 = str(n)[1:]
+
+phone = "130" + n1
+print(phone)
+
+
+
+
+'''
+3、有一个如下列表，请编写代码，提示用户输入1-7中的数字，分别代表周一到周日，根据用户输入，打印输出“今天是周X”（要求：使用上课学过的知识点来做）
+
+li = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+'''
+li = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+
+num = int(input("请输入1-7"))
+
+# index = num -1
+data = li[num -1]
+print(data)
+print('今天是：{}'.format(data))
+
+'''
+4、现有字符串    str1 = "PHP is the best programming language in the world!"
+      要求一：将给定字符串的PHP替换为Python
+      要求二：替换以后，将字符串以空格为分割点进行分割得到一个列表
+
+'''
+
+str1 = "PHP is the best programming language in the world!"
+
+#要求一：将给定字符串的PHP替换为Python
+str2 = str1.replace("PHP","PYTHON")
+print(str2)
+
+#要求二：替换以后，将字符串以空格为分割点进行分割得到一个列表
+li_str = str2.split(' ') #字符串转换为列表
+
+print(li_str)
+
+
+'''
+5、切片操作
+
+    1、通过切片获取s = 'python java php' 中的java
+
+    2、通过切片获取 li = [2,3,1,4,6,2,5,6,7]中的  [2,5,6,7]
+
+
+'''
+s = 'python java php'
+
+
+s1 = s[7:11]
+print(s1) #java
+
+li = [2,3,1,4,6,2,5,6,7]
+li1 = li[5:9]
+print(li1) #[2, 5, 6, 7]
+
